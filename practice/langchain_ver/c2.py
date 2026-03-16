@@ -5,6 +5,7 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
+from pathlib import Path
 
 # C1の評価クラスとevaluate_articleをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
@@ -73,6 +74,9 @@ def main():
         print(f"{i}. {change}")
 
     # 修正後の記事を保存
+    result_dir = Path("result")
+    result_dir.mkdir(parents=True, exist_ok=True)
+
     output_path = "result/revised_article.md"
     with open(output_path, "w") as f:
         f.write(revision.revised_article)

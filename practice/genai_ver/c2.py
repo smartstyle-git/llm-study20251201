@@ -6,6 +6,7 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 import asyncio
+from pathlib import Path
 
 # C1の評価クラスをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
@@ -69,6 +70,9 @@ async def main():
         print(f"{i}. {change}")
 
     # 修正後の記事を保存
+    result_dir = Path("result")
+    result_dir.mkdir(parents=True, exist_ok=True)
+
     output_path = "result/revised_article.md"
     with open(output_path, "w") as f:
         f.write(revision.revised_article)
