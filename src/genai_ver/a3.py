@@ -5,7 +5,7 @@ load_dotenv()
 from google import genai
 from google.genai.types import GenerateContentConfig, ThinkingConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 input_text = "私はサッカーを趣味にしています。"
 response = client.models.generate_content(

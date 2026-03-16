@@ -6,7 +6,7 @@ from google import genai
 import numpy as np
 from google.genai import types
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 target_texts = ["漫画", "アニメ"]

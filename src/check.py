@@ -15,8 +15,8 @@ print(f"{GOOGLE_APPLICATION_CREDENTIALS=}")
 
 from google import genai
 
-client = genai.Client(vertexai=True)
-# client = genai.Client(vertexai=True, project=GOOGLE_CLOUD_PROJECT, location=GOOGLE_CLOUD_LOCATION) # 直接指定も可能
+client = genai.Client(vertexai=False)
+# client = genai.Client(vertexai=False, project=GOOGLE_CLOUD_PROJECT, location=GOOGLE_CLOUD_LOCATION) # 直接指定も可能
 
 response = client.models.generate_content(
     model="gemini-2.5-flash-lite", contents="LLMについて1行で教えてください"

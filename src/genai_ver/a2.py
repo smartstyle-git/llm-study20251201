@@ -5,7 +5,7 @@ load_dotenv()
 from google import genai
 from google.genai.types import GenerateContentConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 # 小説を書くような創造性が必要な場合は温度を高くする
 keywords = "冒険、魔法、勇者、魔王"

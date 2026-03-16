@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 
-llm = ChatVertexAI(
+llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
     thinking_budget=0,  # 思考の上限を0にする
     # include_thoughts=True, # レスポンスに思考過程を含める（thinking_budgetが0の場合は使えない）

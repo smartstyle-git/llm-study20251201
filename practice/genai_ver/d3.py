@@ -7,7 +7,7 @@ from google.genai import types
 from pathlib import Path
 
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 # 演習: ここでPythonコード実行ツールを設定してグラフを生成させよう
 # ヒント: types.Tool(code_execution=types.ToolCodeExecution) をtoolsに追加

@@ -2,12 +2,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel
 from pydantic import BaseModel, Field
 
-llm = ChatVertexAI(model="gemini-2.5-flash", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.1)
 
 
 class Evaluation(BaseModel):

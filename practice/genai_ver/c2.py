@@ -10,7 +10,7 @@ import asyncio
 # C1の評価クラスをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 class ArticleRevision(BaseModel):

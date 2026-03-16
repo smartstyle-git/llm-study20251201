@@ -7,7 +7,7 @@ from google.genai import types
 from pathlib import Path
 
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 response = client.models.generate_content(
     model="gemini-2.5-flash",

@@ -2,12 +2,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 # 演習: ここでChatPromptTemplateを定義しよう
 # ヒント: system メッセージと MessagesPlaceholder を使って履歴を管理
 prompt = ChatPromptTemplate.from_messages(

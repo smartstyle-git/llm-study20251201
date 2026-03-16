@@ -7,7 +7,7 @@ from google.genai.types import GenerateContentConfig
 from pydantic import BaseModel, Field
 import asyncio
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 class Evaluation(BaseModel):

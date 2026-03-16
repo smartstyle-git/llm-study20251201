@@ -5,7 +5,7 @@ load_dotenv()
 from google import genai
 from google.genai import types
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 response = client.models.generate_content(

@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 from typing import Literal
 from google.genai.types import GenerateContentConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 # 演習: コメントの感情（ポジティブ/ネガティブ/ニュートラル）を分類するためのクラスを定義しよう

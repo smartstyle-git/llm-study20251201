@@ -5,7 +5,7 @@ load_dotenv()
 from google import genai
 from google.genai import types
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 # ファイルから画像を読み込む
 with open("data/sample_image.png", "rb") as f:

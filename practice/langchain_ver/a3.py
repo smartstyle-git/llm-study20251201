@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 
-llm = ChatVertexAI(
+llm = ChatGoogleGenerativeAI(
     # 演習: ここで思考が使えるモデルを指定してください
     model="",
     # 演習: ここで思考の上限を設定してください

@@ -6,7 +6,7 @@ from google import genai
 from pydantic import BaseModel, Field
 from google.genai.types import GenerateContentConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 # 演習: コメントから商品名、ポジティブな点、ネガティブな点、スコアを抽出するクラスを定義しよう

@@ -2,11 +2,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 prompt = PromptTemplate.from_template(
     # 演習: ここにinput_text変数を定義して、プロンプトを完成させよう
     # 変数は{}で囲むと定義できます。LangChainではfを付けません

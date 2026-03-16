@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 import base64
@@ -10,7 +10,7 @@ import base64
 with open("data/sample_image.png", "rb") as f:
     image_bytes = f.read()
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 # 演習: ここで画像を含むプロンプトを作成しよう
 # ヒント: humanメッセージに type: "image_url" を使って画像を含める
 prompt = ChatPromptTemplate.from_messages(

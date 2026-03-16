@@ -5,7 +5,7 @@ load_dotenv()
 from google import genai
 from google.genai.types import GenerateContentConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 # 演習: ここにinput_text変数に代入する処理を書こう
 input_text = ""

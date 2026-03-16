@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
 from langchain_core.tools import tool
 
@@ -17,7 +17,7 @@ def func_bird(input_str: str) -> str:
     return ""
 
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 # 演習: ここでツールのリストを作成しよう
 tools = []  # 演習: ここにツールを追加しよう
 

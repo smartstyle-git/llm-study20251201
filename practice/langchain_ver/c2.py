@@ -2,14 +2,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
 # C1の評価クラスとevaluate_articleをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
 
-llm = ChatVertexAI(model="gemini-2.5-flash", temperature=0.3)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
 
 
 class ArticleRevision(BaseModel):

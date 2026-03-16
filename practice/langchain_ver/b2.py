@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 
@@ -13,7 +13,7 @@ class CommentAnalysis(BaseModel):
     pass
 
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
 # 演習: ここにコメントを分析するプロンプトを書こう
 prompt = PromptTemplate.from_template(
     """"""

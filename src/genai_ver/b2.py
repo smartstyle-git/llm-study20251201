@@ -6,7 +6,7 @@ from google import genai
 from pydantic import BaseModel, Field
 from google.genai.types import GenerateContentConfig
 
-client = genai.Client(vertexai=True)
+client = genai.Client(vertexai=False)
 
 
 class CommentAnalysis(BaseModel):

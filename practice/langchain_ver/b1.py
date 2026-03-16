@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from pydantic import BaseModel, Field
 from typing import Literal
@@ -20,7 +20,7 @@ class CommentAnalysis(BaseModel):
     # sentiment: int = Field(description="-1: ネガティブ, 0: ニュートラル, 1: ポジティブ", ge=-1, le=1)
 
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
 # 演習: ここにコメントの感情を判定するプロンプトを書こう
 prompt = PromptTemplate.from_template(
     """"""

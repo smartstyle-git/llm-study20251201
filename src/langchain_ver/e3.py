@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
 from langchain_core.tools import tool
 
@@ -29,7 +29,7 @@ def func_mul(a: int, b: int) -> int:
     return a * b
 
 
-llm = ChatVertexAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
 tools = [func_bird, func_add, func_mul]
 
 agent = create_agent(llm, tools)
