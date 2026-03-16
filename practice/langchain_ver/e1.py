@@ -3,22 +3,22 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from langchain_google_vertexai import VertexAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import numpy as np
 
 
 target_texts = ["漫画", "アニメ"]
 # 演習: ここでEmbeddingモデルを作成しよう
-model = VertexAIEmbeddings(
+model = GoogleGenerativeAIEmbeddings(
     # 演習: ここでモデル名を指定しよう（text-multilingual-embedding-002 など）
     model="",
+    # 演習: ここでタスクタイプを指定しよう
+    # task_type は "semantic_similarity" を指定
+    task_type="",
 )
 # 演習: ここでテキストをベクトル化しよう
-results = model.embed(
+results = model.embed_documents(
     target_texts,
-    # 演習: ここでタスクタイプを指定しよう
-    # task_type は "SEMANTIC_SIMILARITY" を指定
-    embeddings_task_type="",
 )
 
 

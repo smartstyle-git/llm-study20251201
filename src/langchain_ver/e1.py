@@ -3,19 +3,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from langchain_google_vertexai import VertexAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import numpy as np
 
 
 target_texts = ["漫画", "アニメ"]
-model = VertexAIEmbeddings(
+model = GoogleGenerativeAIEmbeddings(
     model="text-multilingual-embedding-002",
     # model="gemini-embedding-001",
     # dimensions=768,
+    task_type="semantic_similarity",
 )
-results = model.embed(
+results = model.embed_documents(
     target_texts,
-    embeddings_task_type="SEMANTIC_SIMILARITY",
 )
 
 embedding1 = np.array(results[0])
