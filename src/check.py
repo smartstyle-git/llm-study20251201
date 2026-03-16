@@ -19,6 +19,6 @@ client = genai.Client(vertexai=False)
 # client = genai.Client(vertexai=False, project=GOOGLE_CLOUD_PROJECT, location=GOOGLE_CLOUD_LOCATION) # 直接指定も可能
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite", contents="LLMについて1行で教えてください"
+    model="gemini-3.1-flash-lite-preview", contents="LLMについて1行で教えてください"
 )
 print(response.text)

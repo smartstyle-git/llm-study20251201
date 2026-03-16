@@ -17,7 +17,7 @@ class CommentAnalysis(BaseModel):
 
 input_text = "スマート加湿器を購入。静音性は期待通り。給水が面倒なのがマイナス。5点満点中3点といったところ。"
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     # 演習: ここにコメントを分析するプロンプトを書こう
     contents=f"""ここにプロンプトを書いてね""",
     config=GenerateContentConfig(

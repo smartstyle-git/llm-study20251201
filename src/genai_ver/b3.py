@@ -41,7 +41,7 @@ input_text = """
 5点満点で4点かなって感じです。
 """
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     contents=f"""**コメント**を分析して、以下の内容を抽出してください。
 # 抽出内容
 - 商品名

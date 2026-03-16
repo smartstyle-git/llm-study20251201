@@ -20,7 +20,7 @@ class CommentAnalysis(BaseModel):
     pass
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 # 演習: ここにコメントを分析して各カテゴリごとにフィードバックを抽出するプロンプトを書こう
 prompt = PromptTemplate.from_template("""""")
 # 演習: ここで構造化出力を使うchainを作成しよう

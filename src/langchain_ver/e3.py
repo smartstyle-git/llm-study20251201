@@ -29,7 +29,7 @@ def func_mul(a: int, b: int) -> int:
     return a * b
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview")
 tools = [func_bird, func_add, func_mul]
 
 agent = create_agent(llm, tools)

@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
+    model="gemini-3.1-flash-lite-preview",
     thinking_budget=0,  # 思考の上限を0にする
     # include_thoughts=True, # レスポンスに思考過程を含める（thinking_budgetが0の場合は使えない）
 )

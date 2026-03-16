@@ -17,7 +17,7 @@ def func_bird(input_str: str) -> str:
     return ""
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview")
 # 演習: ここでツールのリストを作成しよう
 tools = []  # 演習: ここにツールを追加しよう
 

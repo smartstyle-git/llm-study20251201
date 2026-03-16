@@ -30,7 +30,7 @@ class ArticleEvaluationResult(BaseModel):
 async def evaluate_aspect(system_prompt: str, article: str) -> Evaluation:
     """特定の観点で記事を評価"""
     response = await client.aio.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite-preview",
         contents=article,
         config=GenerateContentConfig(
             system_instruction=system_prompt,

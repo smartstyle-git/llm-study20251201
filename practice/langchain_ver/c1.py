@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel
 from pydantic import BaseModel, Field
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 
 
 class Evaluation(BaseModel):

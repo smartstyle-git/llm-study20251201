@@ -36,7 +36,7 @@ def revise_article(
     # system_instruction にフィードバックと修正方針を含める
     # 構造化出力でArticleRevisionクラスを指定する
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite-preview",
         contents=article,
         config=types.GenerateContentConfig(
             # 演習: ここにシステム指示を追加しよう（修正方針とフィードバックを含める）

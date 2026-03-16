@@ -22,7 +22,7 @@ def get_current_humidity(location: str) -> dict[str, str]:
 
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     contents="今日の東京の気温と湿度を調べてください",
     config=types.GenerateContentConfig(
         tools=[get_current_temperature, get_current_humidity]

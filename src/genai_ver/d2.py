@@ -9,7 +9,7 @@ client = genai.Client(vertexai=False)
 
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash",
+    model="gemini-3.1-flash-lite-preview",
     contents="東京の今日の天気を調べてください",
     config=types.GenerateContentConfig(
         tools=[types.Tool(google_search=types.GoogleSearch())]

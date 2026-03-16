@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview")
 prompt = ChatPromptTemplate.from_messages(
     [
         ("system", "必ず英語で応答してください"),

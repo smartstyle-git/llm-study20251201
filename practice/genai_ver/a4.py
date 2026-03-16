@@ -20,7 +20,7 @@ while True:
     # history.append(...)
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-3.1-flash-lite-preview",
         # 演習: ここでhistoryを渡して、これまでの会話履歴を全てLLMに送ろう
         contents=None,
         config=types.GenerateContentConfig(

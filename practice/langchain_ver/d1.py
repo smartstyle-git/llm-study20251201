@@ -10,7 +10,7 @@ import base64
 with open("data/sample_image.png", "rb") as f:
     image_bytes = f.read()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview")
 # 演習: ここで画像を含むプロンプトを作成しよう
 # ヒント: humanメッセージに type: "image_url" を使って画像を含める
 prompt = ChatPromptTemplate.from_messages(

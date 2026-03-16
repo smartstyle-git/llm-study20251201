@@ -17,7 +17,7 @@ while True:
         break
     history.append(types.Content(role="user", parts=[types.Part(text=user_input)]))
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-3.1-flash-lite-preview",
         contents=history,
         config=types.GenerateContentConfig(
             system_instruction="必ず英語で応答してください"
@@ -29,7 +29,7 @@ while True:
 
 # # 簡単な書き方（内部ではセルフ実装と同じように実装している）
 # chat = client.chats.create(
-#     model="gemini-2.5-flash-lite",
+#     model="gemini-3.1-flash-lite-preview",
 #     config=types.GenerateContentConfig(system_instruction="必ず英語で応答してください"),
 # )
 # print("Ctrl+Cで終了")

@@ -10,7 +10,7 @@ from pathlib import Path
 client = genai.Client(vertexai=False)
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash",
+    model="gemini-3.1-flash-lite-preview",
     contents="matplotlibを使ったPythonコードを生成して実行し、y=x^2のグラフを出力してください。",
     # MEMO: グラフに日本語が登場するときは plt.rcParamsにNoto Sans CJK JPを指定させるとよい
     config=types.GenerateContentConfig(

@@ -13,7 +13,7 @@ class CommentAnalysis(BaseModel):
     pass
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 # 演習: ここにコメントを分析するプロンプトを書こう
 prompt = PromptTemplate.from_template(
     """"""

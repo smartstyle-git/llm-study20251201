@@ -14,7 +14,7 @@ class CommentAnalysis(BaseModel):
     score: int = Field(description="5段階のスコア", ge=1, le=5)
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 prompt = PromptTemplate.from_template(
     """次のコメントを分析して、商品名、ポジティブな点、ネガティブな点、5段階のスコアを返してください。
 # コメント

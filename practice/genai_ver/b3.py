@@ -38,7 +38,7 @@ input_text = """
 5点満点で4点かなって感じです。
 """
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     # 演習: ここにコメントを分析して各カテゴリごとにフィードバックを抽出するプロンプトを書こう
     contents=f"""ここにプロンプトを書いてね""",
     config=GenerateContentConfig(

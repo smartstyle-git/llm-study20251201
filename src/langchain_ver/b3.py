@@ -22,7 +22,7 @@ class CommentAnalysis(BaseModel):
     overall_score: int = Field(description="5段階の総合スコア", ge=1, le=5)
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 prompt = PromptTemplate.from_template(
     """**コメント**を分析して、以下の内容を抽出してください。
 # 抽出内容

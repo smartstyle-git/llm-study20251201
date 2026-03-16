@@ -10,7 +10,7 @@ from pathlib import Path
 # C1の評価クラスとevaluate_articleをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.3)
 
 
 class ArticleRevision(BaseModel):

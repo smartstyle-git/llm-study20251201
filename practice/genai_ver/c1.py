@@ -31,7 +31,7 @@ async def evaluate_aspect(system_prompt: str, article: str) -> Evaluation:
     # 演習: ここで非同期でLLMを呼び出して評価を取得しよう
     # 構造化出力でEvaluationクラスのJSON形式で返すように設定しよう
     response = await client.aio.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite-preview",
         contents=article,
         config=GenerateContentConfig(
             system_instruction=system_prompt,

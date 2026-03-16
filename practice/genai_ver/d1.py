@@ -15,7 +15,7 @@ with open("data/sample_image.png", "rb") as f:
 # ヒント: types.Part.from_bytes を使って画像をパートとして追加
 # contentsにはリストで画像パートとテキストを両方渡すことができます
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     # 演習: ここに画像とテキストのプロンプトを含むリストを渡そう
     # ヒント: contents=[types.Part.from_bytes(data=..., mime_type="image/png"), "指示プロンプト"]
     contents=[],

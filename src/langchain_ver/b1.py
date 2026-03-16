@@ -17,7 +17,7 @@ class CommentAnalysis(BaseModel):
     # sentiment: int = Field(description="-1: ネガティブ, 0: ニュートラル, 1: ポジティブ", ge=-1, le=1)
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.1)
+llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 prompt = PromptTemplate.from_template(
     """次のコメントがポジティブかネガティブかニュートラルか判定してください。
 # コメント

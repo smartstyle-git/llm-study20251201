@@ -20,7 +20,7 @@ def get_current_temperature(location: str) -> dict[str, str]:
 # 演習: ここで自作関数をツールとして設定しよう
 # ヒント: tools のリストに直接関数を渡すことができます
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-3.1-flash-lite-preview",
     contents="今日の東京の気温と湿度を調べてください",
     config=types.GenerateContentConfig(
         # 演習: ここに自作関数をツールとして追加しよう

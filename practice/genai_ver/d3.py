@@ -12,7 +12,7 @@ client = genai.Client(vertexai=False)
 # 演習: ここでPythonコード実行ツールを設定してグラフを生成させよう
 # ヒント: types.Tool(code_execution=types.ToolCodeExecution) をtoolsに追加
 response = client.models.generate_content(
-    model="gemini-2.5-flash",
+    model="gemini-3.1-flash-lite-preview",
     contents="matplotlibを使ったPythonコードを生成して実行し、y=x^2のグラフを出力してください。",
     # MEMO: グラフに日本語が登場するときは plt.rcParamsにNoto Sans CJK JPを指定させるとよい
     # 演習: ここでコード実行ツールを設定しよう
