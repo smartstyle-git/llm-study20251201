@@ -11,8 +11,8 @@ client = genai.Client(vertexai=False)
 
 target_texts = ["漫画", "アニメ"]
 result = client.models.embed_content(
-    # model="gemini-embedding-001",
-    model="text-multilingual-embedding-002",
+    model="gemini-embedding-001",
+    # model="text-multilingual-embedding-002",
     contents=target_texts,
     config=types.EmbedContentConfig(
         task_type="SEMANTIC_SIMILARITY",

@@ -10,7 +10,7 @@ import numpy as np
 target_texts = ["漫画", "アニメ"]
 # 演習: ここでEmbeddingモデルを作成しよう
 model = GoogleGenerativeAIEmbeddings(
-    # 演習: ここでモデル名を指定しよう（text-multilingual-embedding-002 など）
+    # 演習: ここでモデル名を指定しよう（gemini-embedding-001 など）
     model="",
     # 演習: ここでタスクタイプを指定しよう
     # task_type は "semantic_similarity" を指定

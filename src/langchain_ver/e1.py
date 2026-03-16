@@ -9,8 +9,8 @@ import numpy as np
 
 target_texts = ["漫画", "アニメ"]
 model = GoogleGenerativeAIEmbeddings(
-    model="text-multilingual-embedding-002",
-    # model="gemini-embedding-001",
+    # model="text-multilingual-embedding-002",
+    model="gemini-embedding-001",
     # dimensions=768,
     task_type="semantic_similarity",
 )

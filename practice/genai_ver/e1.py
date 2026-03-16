@@ -12,7 +12,7 @@ client = genai.Client(vertexai=False)
 target_texts = ["漫画", "アニメ"]
 # 演習: ここでEmbedding APIを使って2つのテキストをベクトル化しよう
 result = client.models.embed_content(
-    # 演習: ここでモデル名を指定しよう（text-multilingual-embedding-002 など）
+    # 演習: ここでモデル名を指定しよう（gemini-embedding-001 など）
     model="",
     # 演習: ここでベクトル化したいテキストのリストを渡そう
     contents=None,
