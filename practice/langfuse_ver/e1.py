@@ -24,7 +24,7 @@ model = GoogleGenerativeAIEmbeddings(
 embedding_runnable = RunnableLambda(model.embed_documents)
 
 # 演習: ここでテキストをベクトル化しよう
-results = model.embed_documents(
+results = embed_documents.invoke(
     target_texts,
     config={"callbacks": [langfuse_handler]}
 )

@@ -20,7 +20,7 @@ model = GoogleGenerativeAIEmbeddings(
 
 embedding_runnable = RunnableLambda(model.embed_documents)
 
-results = model.embedding_runnable(
+results = embedding_runnable.invoke(
     target_texts,
     config={"callbacks": [langfuse_handler]}
 )
