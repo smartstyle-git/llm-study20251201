@@ -4,8 +4,11 @@ load_dotenv()
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
+from langfuse.langchain import CallbackHandler
 from pydantic import BaseModel, Field
 from typing import Literal
+
+langfuse_handler = CallbackHandler()
 
 
 class CategoryFeedback(BaseModel):
@@ -55,6 +58,7 @@ result = chain.invoke(
 まぁトータルで見れば満足してるんですけど、値段とバッテリーのこと考えると
 5点満点で4点かなって感じです。
 """
-    }
+    },
+    config={"callbacks": [langfuse_handler]}
 )
 print(result.model_dump_json(indent=2))

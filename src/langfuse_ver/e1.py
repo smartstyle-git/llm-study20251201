@@ -4,8 +4,11 @@ load_dotenv()
 
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_core.runnables import RunnableLambda
+from langfuse.langchain import CallbackHandler
 import numpy as np
 
+langfuse_handler = CallbackHandler()
 
 target_texts = ["漫画", "アニメ"]
 model = GoogleGenerativeAIEmbeddings(
@@ -14,8 +17,12 @@ model = GoogleGenerativeAIEmbeddings(
     # dimensions=768,
     task_type="semantic_similarity",
 )
-results = model.embed_documents(
+
+embedding_runnable = RunnableLambda(model.embed_documents)
+
+results = model.embedding_runnable(
     target_texts,
+    config={"callbacks": [langfuse_handler]}
 )
 
 embedding1 = np.array(results[0])

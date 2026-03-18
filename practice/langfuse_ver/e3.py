@@ -6,6 +6,9 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
 from langchain_core.tools import tool
+from langfuse.langchain import CallbackHandler
+
+langfuse_handler = CallbackHandler()
 
 
 # 演習: ここで自作関数をtoolとして定義しよう
@@ -27,6 +30,11 @@ agent = None
 
 result = agent.invoke(
     # 演習: ここに質問を追加しよう
-    {"messages": [("human", "")]}
+    {
+        "messages": [
+            ("human", "")
+        ]
+    },
+    config={"callbacks": [langfuse_handler]}    
 )
 print(result["messages"][-1].content)

@@ -5,7 +5,10 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel
+from langfuse.langchain import CallbackHandler
 from pydantic import BaseModel, Field
+
+langfuse_handler = CallbackHandler()
 
 llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview", temperature=0.1)
 
@@ -64,7 +67,12 @@ def evaluate_article(article: str) -> ArticleEvaluationResult:
         }
     )
 
-    results = parallel_chain.invoke({"article": article})
+    results = parallel_chain.invoke(
+        {
+            "article": article
+        },
+        config={"callbacks": [langfuse_handler]}
+    )
 
     return ArticleEvaluationResult.model_validate(results)
 

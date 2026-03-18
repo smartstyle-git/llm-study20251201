@@ -6,7 +6,9 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import create_agent
 from langchain_core.tools import tool
+from langfuse.langchain import CallbackHandler
 
+langfuse_handler = CallbackHandler()
 
 @tool
 def func_bird(input_str: str) -> str:
@@ -41,6 +43,7 @@ result = agent.invoke(
         "messages": [
             ("human", "3と4を足した値に1+3を足した値同士を掛け算するとどうなる？")
         ]
-    }
+    },
+    config={"callbacks": [langfuse_handler]}
 )
 print(result["messages"][-1].content)

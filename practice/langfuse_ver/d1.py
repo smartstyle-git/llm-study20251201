@@ -5,7 +5,10 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+from langfuse.langchain import CallbackHandler
 import base64
+
+langfuse_handler = CallbackHandler()
 
 with open("data/sample_image.png", "rb") as f:
     image_bytes = f.read()
@@ -32,7 +35,8 @@ result = chain.invoke(
     {
         "file_type": "image/png",
         "base64_data": base64.b64encode(image_bytes).decode("utf-8"),
-    }
+    },
+    config={"callbacks": [langfuse_handler]}
 )
 print(result)
 

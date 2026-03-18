@@ -4,8 +4,11 @@ load_dotenv()
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
+from langfuse.langchain import CallbackHandler
 from pydantic import BaseModel, Field
 from typing import Literal
+
+langfuse_handler = CallbackHandler()
 
 
 # 演習: ここでコメントの感情を分類するクラスを定義しよう
@@ -32,7 +35,8 @@ chain = None
 result = chain.invoke(
     {
         "input_text": "スマート加湿器を購入。静音性は期待通り。給水が面倒なのがマイナス。5点満点中3点といったところ。"
-    }
+    },
+    config={"callbacks": [langfuse_handler]}
 )
 print(result.sentiment)
 

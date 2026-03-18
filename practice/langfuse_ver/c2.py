@@ -4,8 +4,11 @@ load_dotenv()
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from langfuse.langchain import CallbackHandler
 from pydantic import BaseModel, Field
 from pathlib import Path
+
+langfuse_handler = CallbackHandler()
 
 # C1の評価クラスとevaluate_articleをインポート
 from c1 import evaluate_article, ArticleEvaluationResult
@@ -51,7 +54,13 @@ def revise_article(
 
     feedback = f""""""
 
-    return revision_chain.invoke({"article": article, "feedback": feedback})
+    return revision_chain.invoke(
+        {
+            "article": article, 
+            "feedback": feedback
+        },
+        config={"callbacks": [langfuse_handler]}
+    )
 
 
 def main():

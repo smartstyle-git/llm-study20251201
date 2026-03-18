@@ -4,7 +4,11 @@ load_dotenv()
 
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_core.runnables import RunnableLambda
+from langfuse.langchain import CallbackHandler
 import numpy as np
+
+langfuse_handler = CallbackHandler()
 
 
 target_texts = ["漫画", "アニメ"]
@@ -16,9 +20,13 @@ model = GoogleGenerativeAIEmbeddings(
     # task_type は "semantic_similarity" を指定
     task_type="",
 )
+
+embedding_runnable = RunnableLambda(model.embed_documents)
+
 # 演習: ここでテキストをベクトル化しよう
 results = model.embed_documents(
     target_texts,
+    config={"callbacks": [langfuse_handler]}
 )
 
 

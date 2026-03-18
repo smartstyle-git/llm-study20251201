@@ -4,6 +4,9 @@ load_dotenv()
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
+from langfuse.langchain import CallbackHandler
+
+langfuse_handler = CallbackHandler()
 
 llm = ChatGoogleGenerativeAI(
     # 演習: ここで思考が使えるモデルを指定してください
@@ -20,8 +23,11 @@ prompt = PromptTemplate.from_template(
 chain = prompt | llm
 
 # 実行時に変数を渡す
-result = chain.invoke({
-    # 演習: ここに変数input_textに代入する処理を書こう
-    "": ""
-})
+result = chain.invoke(
+    {
+        # 演習: ここに変数input_textに代入する処理を書こう
+        "": ""
+    },
+    config={"callbacks": [langfuse_handler]}
+)
 print(result.content)

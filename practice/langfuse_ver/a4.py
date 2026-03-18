@@ -6,6 +6,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
+from langfuse.langchain import CallbackHandler
+
+langfuse_handler = CallbackHandler()
 
 llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite-preview")
 # 演習: ここでChatPromptTemplateを定義しよう
@@ -31,7 +34,12 @@ while True:
     # ヒント: HumanMessage(content=user_input) を使う
     # history.append(...)
     
-    response = chain.invoke({"history": history})
+    response = chain.invoke(
+        {
+            "history": history
+        },
+        config={"callbacks": [langfuse_handler]}
+    )
     
     # 演習: ここでLLMの応答をhistoryに追加しよう
     # ヒント: AIMessage(content=response) を使う
