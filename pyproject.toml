@@ -8,6 +8,7 @@ dependencies = [
     "google-genai>=1.50.1",
     "langchain>=1.0.5",
     "langchain-google-genai>=4.2.1",
+    "langfuse>=4.0.0",
     "numpy>=2.4.3",
     "python-dotenv>=1.2.1",
 ]
